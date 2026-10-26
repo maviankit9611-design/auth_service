@@ -1,0 +1,6 @@
+package com.learninghub.auth_service.model;
+
+public enum Role {
+    ADMIN,
+    CUSTOMER
+}
