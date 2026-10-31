@@ -13,4 +13,8 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String,String>> handleEmailAlreadyRegisteredException(EmailAlreadyRegisteredException ex) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("message",ex.getMessage()));
     }
+    @ExceptionHandler(InvalidCredentialsException.class)
+    public ResponseEntity<Map<String,String>> handleInvalidCredentialsException(InvalidCredentialsException ex) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("message",ex.getMessage()));
+    }
 }
